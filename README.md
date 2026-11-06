@@ -1,7 +1,7 @@
 # SimplePool
 
 Languages
-£º[¼òÌåÖĞÎÄ](readme/README-zh-CN.md)
+ï¼š[ç®€ä½“ä¸­æ–‡](readme/README-zh-CN.md)
 | English
 
 A simple memory pool that can be called by other languages.
