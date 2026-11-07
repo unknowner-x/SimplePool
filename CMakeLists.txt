@@ -17,6 +17,12 @@ else()
     add_library(SimplePool STATIC ${SRC})
 endif()
 
-set_target_properties(SimplePool 
-    PROPERTIES PREFIX ""
+target_compile_definitions(SimplePool PRIVATE BUILD_LIB)
+
+set_target_properties(
+    SimplePool PROPERTIES 
+                PREFIX ""
+                CXX_VISIBILITY_PRESET hidden
+                C_VISIBILITY_PRESET hidden
+                VISIBILITY_INLINES_HIDDEN ON    
 )
