@@ -16,6 +16,16 @@ make
 头文件（simple_pool.h）已放置在/build/include目录中。
 默认的库类型为动态库，为了导出静态库，需要给cmake指定`-DEXPORT_SHARED=OFF`。
 
+## 安装
+为了安装SimplePool，请确保已经构建了SimplePool。从你的构建目录（或填写它的路径），运行：
+```bash
+cmake --install <path-to-build-directory>
+```
+然后你应该可以把它用于其他目标：
+```cmake
+find_package(SimplePool)
+target_link_libraries(TargetName PRIVATE SimplePool::SimplePool)
+```
 ## 示例
 这里是一些示例
 
