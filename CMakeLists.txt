@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20.1)
-project(SimplePool VERSION 1.0.0 LANGUAGES CXX)
+project(SimplePool VERSION 0.1.0 LANGUAGES CXX)
 
 option(EXPORT_SHARED "Build SimplePool as a shared library" ON)
 
@@ -21,7 +21,6 @@ target_compile_definitions(SimplePool PRIVATE BUILD_LIB)
 
 set_target_properties(
     SimplePool PROPERTIES 
-                PREFIX ""
                 CXX_VISIBILITY_PRESET hidden
                 C_VISIBILITY_PRESET hidden
                 VISIBILITY_INLINES_HIDDEN ON    
