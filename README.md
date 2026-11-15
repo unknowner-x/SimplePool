@@ -7,7 +7,7 @@ Languages
 A simple memory pool written in C++ that can be called by other languages.
 
 ## Build
-Run:
+Run it:
 ```bash
 mkdir build && cd build
 cmake ..
@@ -19,7 +19,18 @@ The header file (simple_pool.h) has been placed in /build/include.
 The default library type is a dynamic library. To export a static library, you need to specify `-DEXPORT_SHARED=OFF` for cmake.
 
 
-# Example:
+## Install:
+To install SimplePool, plase make sure you have already built the SimplePool library. from your build directory (or by passing its path), run:
+```bash
+cmake --install <path-to-build-directory>
+```
+Then you can use it for other targets as follows:
+```cmake
+find_package(SimplePool)
+target_link_libraries(TargetName PRIVATE SimplePool::SimplePool)
+```
+
+## Example:
 Here are some examples 
 
 ### C
@@ -91,7 +102,7 @@ OK: b'hello memory pool'
 ## Document
 SimplePool supports generating documentation through Doxygen.
 
-Run:
+Run it:
 ```bash
 doxygen
 ```
