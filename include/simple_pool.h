@@ -24,6 +24,12 @@
     #define SP_EXPORT
 #endif
 
+/**  
+ * @def DEFAULT_ALIGNMENT
+ * The default aligned.
+ */
+#define DEFAULT_ALIGNMENT sizeof(void*)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -31,12 +37,27 @@ extern "C" {
 typedef struct SimplePool SimplePool;
 
 /** 
- * @brief Initializes the memory pool with the specified size.
+ * @brief Initialize a memory pool with the specified size and aligned to the default byte(DEFAULT_ALIGNMENT).
  * @param block_size The size of each block in the pool.
  * @param num_blocks The number of each block in the pool.
- * @return A SimplePool handle
+ * @return A SimplePool handle.
+ *
+ * @see simple_pool_init_alignment(size_t block_size, size_t num_blocks, size_t alignment)
+ * @see DEFAULT_ALIGNMENT
  */
 SP_EXPORT SimplePool* simple_pool_init(size_t block_size, size_t num_blocks);
+
+/** 
+ * @brief Initialize a memory pool with a specified size and aligned according to a specific byte alignment.
+ * @param block_size The size of each block in the pool.
+ * @param num_blocks The number of each block in the pool.
+ * @param alignment specified alignment.
+ * @return A SimplePool handle.
+ *
+ * @see simple_pool_init(size_t block_size, size_t num_blocks)
+ * @see DEFAULT_ALIGNMENT
+ */
+SP_EXPORT SimplePool* simple_pool_init_alignment(size_t block_size, size_t num_blocks, size_t alignment);
 
 /**
  * @brief Destroys the memory pool and frees all allocated memory.
